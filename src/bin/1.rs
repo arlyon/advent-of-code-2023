@@ -42,7 +42,6 @@ fn main() {
             .lines()
             .filter_map(|line| lib::first_last(
                 (0..line.len())
-                    .into_iter()
                     .filter_map(|idx| DIGITS.iter().find(|d| line[idx..].starts_with(d.0))),
                 |(_, val)| Some(val),
             ))
